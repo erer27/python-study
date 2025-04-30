@@ -34,4 +34,15 @@ def recipe_list(request):
     return render(request,"recipe/list.html",recipe_data)
 
 # 상세보기 => 쿠키 => redirect => detail_before
+def recipe_before(request):
+    no=request.GET['no']
+    response=redirect("/web/recipe/detail/?no="+str(no))
+    response.set_cookie(f"recipe{no}",no,60*60*24)
+    return response
 # 상세보기
+def recipe_detail(request):
+    no = request.GET['no']
+
+
+
+    return render(request,"recipe/detail.html")

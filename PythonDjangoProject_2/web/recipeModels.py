@@ -18,7 +18,7 @@ def recipeListData(page):
             WHERE num BETWEEN {start} AND {end}
             """
         cur.execute(sql)
-        recipe_list=cur.fecthall()
+        recipe_list=cur.fetchall()
         '''
             fetchone= (....)
             fetchall = [(),(),()..]
